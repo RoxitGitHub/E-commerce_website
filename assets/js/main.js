@@ -133,3 +133,34 @@ const toggleItem = (item) => {
 
 
 /*=============== STYLE SWITCHER ===============*/
+const styleSwitcherToggle = document.querySelector(".style__switcher-toggler");
+styleSwitcherToggle.addEventListener("click", () => {
+    document.querySelector(".style__switcher").classList.toggle("open");
+})
+
+//HIDE STYLE SWITCHER ON SCROLL
+window.addEventListener("scroll", () => {
+    if(document.querySelector(".style__switcher").classList.contains("open")) {
+        document.querySelector(".style__switcher").classList.remove("open");
+    }
+})
+
+//THEME COLORS
+function themecolors() {
+    const colorStyle = document.querySelector(".js-color-style"),
+        themeColorsContainer = document.querySelector(".js-theme-colors");
+    themeColorsContainer.addEventListener("click", ({target}) => {
+        if (target.classList.contains("js-theme-color-item")) {
+            localStorage.setItem("color", target.getAttribute("data-js-theme-color"));
+            setColors();
+        }
+    })
+    function setColors() {
+        let path = colorStyle.getAttribute("href").split("/");
+        path = path.slice(0, path.length - 1);
+        colorStyle.setAttribute("href", path.join("/") + "/" + localStorage.getItem("color") + ".css");
+        console.log(path);
+    }
+
+}
+themecolors();

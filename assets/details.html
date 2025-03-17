@@ -432,6 +432,21 @@
     </footer>
 
     <!--=============== LIGHTBOX ===============-->
+    <div class="lightbox">
+        <div class="lightbox__content">
+            <div class="lightbox__close">&times;</div>
+            <img src="../assets/img/details-2.png" alt="" class="lightbox__img">
+            <div class="lightbox__caption">
+                <div class="caption__text">Zoro</div>
+                <div class="caption__counter"></div>
+            </div>
+        </div>
+
+        <div class="lightbox__controls">
+            <div class="prev__item" onclick="prevItem()"><i class="bx bx-chevron-left"></i></div>
+            <div class="next__item" onclick="nextItem()"><i class="bx bx-chevron-right"></i></div>
+        </div>
+    </div>
 
     <!--=============== SCROLL UP ===============-->
     <a href="#" class="scrollup" id="scroll-up">
@@ -439,6 +454,64 @@
     </a>
 
     <!--=============== STYLE SWITCHER ===============-->
+
+
+    <!--=============== LIGHTBOX ===============-->
+    <script>
+        const productItems = document.querySelectorAll(".product__img"),
+              totalProductItems = productItems.length,
+              lightbox = document.querySelector(".lightbox"),
+              lightboxImg = document.querySelector(".lightbox__img"),
+              lightboxClose = document.querySelector(".lightbox__close"),
+              lightboxCounter = document.querySelector(".caption__counter"); 
+        let itemIndex = 0;
+        
+        for(let i=0; i<totalProductItems; i++) {
+            productItems[i].addEventListener("click", function() {
+                itemIndex=i;
+                changeItem();
+                toggleLightbox ();
+            })
+        }
+
+        function nextItem() {
+                if (itemIndex === totalProductItems - 1) {
+                    itemIndex = 0;
+                }
+
+                else {
+                    itemIndex++
+                }
+                changeItem()
+            }
+        
+        function prevItem() {
+                if (itemIndex === 0) {
+                    itemIndex = totalProductItems - 1;
+                } else {
+                    itemIndex--;
+                }
+                changeItem();
+            }
+
+        function toggleLightbox() {
+            lightbox.classList.toggle("open");
+        }
+
+        function changeItem() {
+                const imgSrc = productItems[itemIndex].querySelector("img").getAttribute("src");
+                lightboxImg.setAttribute("src", imgSrc); // Update the lightbox image source
+                lightboxCounter.innerHTML = (itemIndex + 1) + " of " + totalProductItems;
+            }
+
+        // close lightbox
+        lightbox.addEventListener("click", function() {
+            if(event.target === lightboxClose || event.target === lightbox) {
+                toggleLightbox()
+            }
+        })
+
+    </script>
 
     <!--=============== SWIPER JS ===============-->
     <script src="../assets/js/swiper-bundle.min.js"></script>
