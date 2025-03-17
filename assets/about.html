@@ -14,7 +14,7 @@
 
     <!--=============== CSS ===============-->
     <link rel="stylesheet" href="../assets/css/style.css">
-    <link rel="stylesheet" href="../assets/css/colors/color-1.css">
+    <link rel="stylesheet" class="js-color-style" href="../assets/css/colors/color-1.css">
 
     <title>Zoro - Responsive E-commerce website</title>
 </head>
@@ -60,6 +60,10 @@
             </div>
     
             <div class="nav__btns">
+                <!-- Add this search button -->
+                <div class="search__toggle" id="search-button">
+                    <i class="bx bx-search"></i>
+                </div>
                 <div class="login__toggle" id="login-button">
                     <i class="bx bx-user"></i>
                 </div>
@@ -197,6 +201,31 @@
         </form>
     </div>
 
+    <!--=============== SEARCH ===============-->
+    <div class="search" id="search">
+        <i class="bx bx-x search__close" id="search-close"></i>
+    
+        <h2 class="search__title-center">Search Products</h2>
+    
+        <form action="" class="search__form">
+            <div class="search__content">
+                <label for="search-input" class="search__label">Search for products</label>
+                <input type="text" id="search-input" placeholder="What are you looking for?" class="search__input">
+            </div>
+            <button type="submit" class="button search__button">Search</button>
+        </form>
+    
+        <div class="search__results">
+            <h3 class="search__results-title">Popular Searches</h3>
+            <ul class="search__results-list">
+                <li><a href="#" class="search__results-item">Windbreaker Jacket</a></li>
+                <li><a href="#" class="search__results-item">Cardigan Hoodie</a></li>
+                <li><a href="#" class="search__results-item">Fleece Jacket</a></li>
+                <li><a href="#" class="search__results-item">Winter Collection</a></li>
+            </ul>
+        </div>
+    </div>
+
     <!--=============== MAIN ===============-->
     <main class="main">
         <!--=============== ABOUT ===============-->
@@ -295,6 +324,26 @@
 
 
     <!--=============== STYLE SWITCHER ===============-->
+    <div class="style__switcher">
+        <div class="style__switcher-toggler s__icon">
+            <i class="bx bxs-cog bx-spin"></i>
+        </div>
+    
+        <h4 class="">Theme Colors</h4>
+    
+        <div class="theme__colors js-theme-colors">
+            <button type="button" data-js-theme-color="color-1" class="js-theme-color-item theme__button
+                        color-1"><i class="bx bx-check"></i></button>
+            <button type="button" data-js-theme-color="color-2" class="js-theme-color-item theme__button
+                        color-2"><i class="bx bx-check"></i></button>
+            <button type="button" data-js-theme-color="color-3" class="js-theme-color-item theme__button
+                        color-3"><i class="bx bx-check"></i></button>
+            <button type="button" data-js-theme-color="color-4" class="js-theme-color-item theme__button
+                        color-4"><i class="bx bx-check"></i></button>
+            <button type="button" data-js-theme-color="color-5" class="js-theme-color-item theme__button
+                        color-5"><i class="bx bx-check"></i></button>
+        </div>
+    </div>
 
     <!--=============== SWIPER JS ===============-->
     <script src="../assets/js/swiper-bundle.min.js"></script>

@@ -60,6 +60,10 @@
             </div>
 
             <div class="nav__btns">
+                <!-- Add this search button -->
+                <div class="search__toggle" id="search-button">
+                    <i class="bx bx-search"></i>
+                </div>
                 <div class="login__toggle" id="login-button">
                     <i class="bx bx-user"></i>
                 </div>
@@ -195,6 +199,31 @@
                 <p class="signup">Not a member? <a href="registration.html">Sign up now</a></p>
             </div>
         </form>
+    </div>
+
+    <!--=============== SEARCH ===============-->
+    <div class="search" id="search">
+        <i class="bx bx-x search__close" id="search-close"></i>
+    
+        <h2 class="search__title-center">Search Products</h2>
+    
+        <form action="" class="search__form">
+            <div class="search__content">
+                <label for="search-input" class="search__label">Search for products</label>
+                <input type="text" id="search-input" placeholder="What are you looking for?" class="search__input">
+            </div>
+            <button type="submit" class="button search__button">Search</button>
+        </form>
+    
+        <div class="search__results">
+            <h3 class="search__results-title">Popular Searches</h3>
+            <ul class="search__results-list">
+                <li><a href="#" class="search__results-item">Windbreaker Jacket</a></li>
+                <li><a href="#" class="search__results-item">Cardigan Hoodie</a></li>
+                <li><a href="#" class="search__results-item">Fleece Jacket</a></li>
+                <li><a href="#" class="search__results-item">Winter Collection</a></li>
+            </ul>
+        </div>
     </div>
 
     <!--=============== MAIN ===============-->

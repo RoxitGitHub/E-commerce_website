@@ -195,7 +195,8 @@ input {
 
 .nav__toggle,
 .login__toggle,
-.nav__shop {
+.nav__shop,
+.search__toggle {
     font-size: 1.25rem;
     cursor: pointer;
 }
@@ -1143,6 +1144,94 @@ input {
     border-radius: .5rem;
 }
 
+/*=============== SEARCH ===============*/
+.search {
+    position: fixed;
+    background-color: var(--body-color);
+    z-index: var(--z-fixed);
+    width: 420px;
+    box-shadow: -2px 0 4px var(--shadow);
+    height: 100%;
+    top: 0;
+    right: -100%;
+    padding: 3.5rem 2rem;
+    transition: .4s;
+}
+
+.search__title-center {
+    font-size: var(--h2-font-size);
+    text-align: center;
+    margin-bottom: var(--mb-3);
+}
+
+.search__close {
+    font-size: 2rem;
+    color: var(--title-color);
+    position: absolute;
+    top: 1.25rem;
+    right: .9rem;
+    cursor: pointer;
+}
+
+.search__form {
+    display: grid;
+    row-gap: 1.5rem;
+    margin-bottom: var(--mb-3);
+}
+
+.search__content {
+    background: var(--container-color);
+    border-radius: .5rem;
+    padding: .75rem 1rem .25rem;
+}
+
+.search__label {
+    font-size: var(--small-font-size);
+    color: var(--title-color);
+}
+
+.search__input {
+    width: 100%;
+    background: var(--container-color);
+    color: var(--text-color);
+    font-size: var(--normal-font-size);
+    padding: .25rem .5rem .5rem 0;
+}
+
+.search__button {
+    width: 100%;
+}
+
+.search__results {
+    margin-top: var(--mb-2);
+}
+
+.search__results-title {
+    font-size: var(--h3-font-size);
+    margin-bottom: var(--mb-1);
+}
+
+.search__results-list {
+    display: grid;
+    row-gap: .75rem;
+}
+
+.search__results-item {
+    color: var(--text-color);
+    font-size: var(--small-font-size);
+    transition: .3s;
+}
+
+.search__results-item:hover {
+    color: var(--first-color);
+}
+
+/* Show search */
+.show-search {
+    right: 0;
+}
+
+
 /*=============== LOGIN ===============*/
 .login {
     position: fixed;
@@ -1780,6 +1869,10 @@ input {
         row-gap: 2rem;
     }
 
+    .search {
+        width: 100%;
+    }
+
     .pagination {
         justify-content: center;
     }
@@ -1830,7 +1923,8 @@ input {
     }
 
     .login,
-    .cart {
+    .cart,
+    .search {
         width: 100%;
     }
 
@@ -1902,6 +1996,18 @@ input {
 
     .shop__container {
         grid-template-columns: 1fr;
+    }
+
+    .search__results-title {
+        font-size: var(--normal-font-size);
+    }
+    
+    .search__results-item {
+        font-size: var(--smaller-font-size);
+    }
+    
+    .search__form {
+        row-gap: 1rem;
     }
 
     .pagination span {

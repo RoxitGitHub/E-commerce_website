@@ -19,6 +19,27 @@ if (navClose) {
     })
 }
 
+/*=============== SHOW SEARCH ===============*/
+const search = document.getElementById('search'),
+    searchButton = document.getElementById('search-button'),
+    searchClose = document.getElementById('search-close')
+
+/*===== SEARCH SHOW =====*/
+/* Validate if constant exists */
+if (searchButton) {
+    searchButton.addEventListener("click", () => {
+        search.classList.add('show-search')
+    })
+}
+
+/*===== SEARCH HIDDEN =====*/
+/* Validate if constant exists */
+if (searchClose) {
+    searchClose.addEventListener("click", () => {
+        search.classList.remove('show-search')
+    })
+}
+
 /*=============== SHOW CART ===============*/
 const cart = document.getElementById('cart'),
 cartShop = document.getElementById('cart-shop'),
@@ -149,18 +170,40 @@ window.addEventListener("scroll", () => {
 function themecolors() {
     const colorStyle = document.querySelector(".js-color-style"),
         themeColorsContainer = document.querySelector(".js-theme-colors");
-    themeColorsContainer.addEventListener("click", ({target}) => {
+
+    themeColorsContainer.addEventListener("click", ({ target }) => {
         if (target.classList.contains("js-theme-color-item")) {
             localStorage.setItem("color", target.getAttribute("data-js-theme-color"));
             setColors();
         }
-    })
+    });
+
     function setColors() {
         let path = colorStyle.getAttribute("href").split("/");
         path = path.slice(0, path.length - 1);
         colorStyle.setAttribute("href", path.join("/") + "/" + localStorage.getItem("color") + ".css");
-        console.log(path);
+
+        // Remove active class from previously active button
+        const activeColor = document.querySelector(".js-theme-color-item.active");
+        if (activeColor) {
+            activeColor.classList.remove("active");
+            activeColor.querySelector("i").style.display = "none"; // Hide check icon
+        }
+
+        // Add active class to selected button
+        const selectedButton = document.querySelector("[data-js-theme-color='" + localStorage.getItem("color") + "']");
+        if (selectedButton) {
+            selectedButton.classList.add("active");
+            selectedButton.querySelector("i").style.display = "block"; // Show check icon
+        }
     }
 
+    if (localStorage.getItem("color") !== null) {
+        setColors();
+    } else {
+        const defaultColor = colorStyle.getAttribute("href").split("/").pop().split(".").shift();
+        document.querySelector("[data-js-theme-color='" + defaultColor + "']").classList.add("active");
+    }
 }
+
 themecolors();
