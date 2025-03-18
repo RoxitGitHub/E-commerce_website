@@ -6,6 +6,36 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- these meta tags inside the <head> section -->
+    <meta name="description"
+        content="Zoro - Shop the latest fashion trends with our collection of clothing, accessories, and more. Free shipping on orders over $50.">
+    <meta name="keywords" content="fashion, clothing, e-commerce, jackets, windbreaker, cardigan, winter collection">
+    <meta name="author" content="Zoro Fashion">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.zorofashion.com/">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.zorofashion.com/">
+    <meta property="og:title" content="Zoro - Responsive E-commerce website">
+    <meta property="og:description"
+        content="Shop the latest fashion trends with our collection of clothing, accessories, and more. Free shipping on orders over $50.">
+    <meta property="og:image" content="https://www.zorofashion.com/assets/img/og-image.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.zorofashion.com/">
+    <meta property="twitter:title" content="Zoro - Responsive E-commerce website">
+    <meta property="twitter:description"
+        content="Shop the latest fashion trends with our collection of clothing, accessories, and more. Free shipping on orders over $50.">
+    <meta property="twitter:image" content="https://www.zorofashion.com/assets/img/og-image.jpg">
+    
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
     <!--=============== BOXICONS ===============-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
 
@@ -16,65 +46,65 @@
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" class="js-color-style" href="../assets/css/colors/color-1.css">
 
-    <title>Zoro - Responsive E-commerce website</title>
+    <title>ZORO - Responsive E-commerce website</title>
 </head>
 
 <body>
     <!--=============== HEADER ===============-->
-    <header class="header" id="header">
-        <nav class="nav container">
-            <a href="index.html" class="nav__logo">
-                <i class='bx bxs-shopping-bags nav__logo-icon'></i>Zoro
+    <header class="header" id="header" role="banner">
+        <nav class="nav container" role="navigation" aria-label="Main Navigation">
+            <a href="index.html" class="nav__logo" aria-label="Zoro Home">
+                <i class='bx bxs-shopping-bags nav__logo-icon' aria-hidden="true"></i>ZORO
             </a>
     
             <div class="nav__menu" id="nav-menu">
-                <ul class="nav__list">
-                    <li class="nav__item">
-                        <a href="index.html" class="nav__link">Home</a>
+                <ul class="nav__list" role="menubar">
+                    <li class="nav__item" role="none">
+                        <a href="index.html" class="nav__link" role="menuitem" aria-current="page">Home</a>
                     </li>
     
-                    <li class="nav__item">
-                        <a href="shop.html" class="nav__link">Shop</a>
+                    <li class="nav__item" role="none">
+                        <a href="shop.html" class="nav__link" role="menuitem">Shop</a>
                     </li>
     
-                    <li class="nav__item">
-                        <a href="about.html" class="nav__link active-link">About</a>
+                    <li class="nav__item" role="none">
+                        <a href="about.html" class="nav__link active-link" role="menuitem">About</a>
                     </li>
     
-                    <li class="nav__item">
-                        <a href="blog.html" class="nav__link">Blog</a>
+                    <li class="nav__item" role="none">
+                        <a href="blog.html" class="nav__link" role="menuitem">Blog</a>
                     </li>
     
-                    <li class="nav__item">
-                        <a href="faq.html" class="nav__link">Faq's</a>
+                    <li class="nav__item" role="none">
+                        <a href="faq.html" class="nav__link" role="menuitem">Faq's</a>
                     </li>
     
-                    <li class="nav__item">
-                        <a href="contact.html" class="nav__link">Contact</a>
+                    <li class="nav__item" role="none">
+                        <a href="contact.html" class="nav__link" role="menuitem">Contact</a>
                     </li>
                 </ul>
     
-                <div class="nav__close" id="nav-close">
-                    <i class="bx bx-x"></i>
-                </div>
+                <button class="nav__close" id="nav-close" aria-label="Close navigation menu">
+                    <i class="bx bx-x" aria-hidden="true"></i>
+                </button>
             </div>
     
             <div class="nav__btns">
-                <!-- Add this search button -->
-                <div class="search__toggle" id="search-button">
-                    <i class="bx bx-search"></i>
-                </div>
-                <div class="login__toggle" id="login-button">
-                    <i class="bx bx-user"></i>
-                </div>
+                <button class="login__toggle" id="login-button" aria-label="Open login form">
+                    <i class="bx bx-user" aria-hidden="true"></i>
+                </button>
     
-                <div class="nav__shop" id="cart-shop">
-                    <i class="bx bx-shopping-bag"></i>
-                </div>
+                <button class="search__toggle" id="search-button" aria-label="Open search">
+                    <i class="bx bx-search" aria-hidden="true"></i>
+                </button>
     
-                <div class="nav__toggle" id="nav-toggle">
-                    <i class="bx bx-grid-alt"></i>
-                </div>
+                <button class="nav__shop" id="cart-shop" aria-label="Open shopping cart">
+                    <i class="bx bx-shopping-bag" aria-hidden="true"></i>
+                </button>
+    
+                <button class="nav__toggle" id="nav-toggle" aria-label="Toggle navigation menu">
+                    <i class="bx bx-grid-alt" aria-hidden="true"></i>
+                </button>
             </div>
         </nav>
     </header>
@@ -88,7 +118,7 @@
         <div class="cart__container">
             <article class="cart__card">
                 <div class="cart__box">
-                    <img src="../assets/img/cart-1.png" alt="" class="cart__img">
+                    <img src="../assets/img/cart-1.png" alt="Windbreaker - $12 Fashion Item in Cart" class="cart__img">
                 </div>
     
                 <div class="cart__details">
@@ -115,7 +145,7 @@
     
             <article class="cart__card">
                 <div class="cart__box">
-                    <img src="../assets/img/cart-2.png" alt="" class="cart__img">
+                    <img src="../assets/img/cart-2.png" alt="Cardigan Hoodie - $16 Fashion Item in Cart" class="cart__img">
                 </div>
     
                 <div class="cart__details">
@@ -142,7 +172,7 @@
     
             <article class="cart__card">
                 <div class="cart__box">
-                    <img src="../assets/img/cart-3.png" alt="" class="cart__img">
+                    <img src="../assets/img/cart-3.png" alt="Cartoon - $10 Fashion Item in Cart" class="cart__img">
                 </div>
     
                 <div class="cart__details">
@@ -266,20 +296,26 @@
     </main>
 
     <!--=============== FOOTER ===============-->
-    <footer class="footer section">
+    <footer class="footer section" role="contentinfo">
         <div class="footer__container container grid">
             <!-- FOOTER CONTENT 1-->
             <div class="footer__content">
-                <a href="#" class="footer__logo">
-                    <i class="bx bxs-shopping-bags footer__logo-icon"></i>Zoro
+                <a href="#" class="footer__logo" aria-label="Zoro Home">
+                    <i class="bx bxs-shopping-bags footer__logo-icon" aria-hidden="true"></i>ZORO
                 </a>
     
                 <p class="footer__description">Enjoy the biggest sale <br> of your life.</p>
     
                 <div class="footer__social">
-                    <a href="#" class="footer__social-link"><i class="bx bxl-facebook"></i></a>
-                    <a href="#" class="footer__social-link"><i class="bx bxl-instagram-alt"></i></a>
-                    <a href="#" class="footer__social-link"><i class="bx bxl-twitter"></i></a>
+                    <a href="#" class="footer__social-link" aria-label="Facebook">
+                        <i class="bx bxl-facebook" aria-hidden="true"></i>
+                    </a>
+                    <a href="#" class="footer__social-link" aria-label="Instagram">
+                        <i class="bx bxl-instagram-alt" aria-hidden="true"></i>
+                    </a>
+                    <a href="#" class="footer__social-link" aria-label="Twitter">
+                        <i class="bx bxl-twitter" aria-hidden="true"></i>
+                    </a>
                 </div>
             </div>
             <!-- FOOTER CONTENT 2-->
